@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .container{
+        width: 500px;
+        border: 5px solid black;
+        display: grid;
+        grid-template-columns: 100px 100px 100px 100px;
+        grid-template-rows: 100px 100px 100px;
+    }
+    .pink{
+        background-color: pink;
+    }
+    .gray{
+        background-color: gray;
+        grid-column: span 3;
+    }
+    .green{
+        background-color: rgb(97, 165, 97);
+    }
+    .blue{
+        background-color: rgb(113, 113, 200);
+        grid-row: span 2;
+    }
+    .light-purple{
+        background-color: rgb(194, 110, 162);
+        grid-row: span 2;
+    }
+    .light-red{
+        background-color: brown;
+        grid-row: span 2;
+    }
+    .purple{
+        background-color: rgb(158, 72, 158);
+    }
+    .Container1{
+        width: 500px;
+        border: 5px solid black;
+        display: grid;
+        grid-template-columns: 100px 200px 100px;
+        grid-template-rows: 100px 100px 100px 100px 100px;
+
+    }
+    .Nav{
+        background-color: blue;
+        grid-column: span 3;
+    }
+    .side{
+        background-color: blueviolet;
+        grid-row: span 3;
+    }
+    .content1{
+        background-color: brown;
+        grid-column: span 2;
+    }
+    .content2{
+        background-color: green;
+        grid-column: span 2 ;
+    }
+    .content3{
+        background-color: greenyellow;
+        grid-row: span ;
+        
+    }
+    .side1{
+        background-color: yellow;
+        grid-row: span 2;
+    }
+    
+    .tooten{
+        background-color: aquamarine;
+        grid-column: span 3;
+    }
+</style>
+<body>
+    <div class="container">
+    <div class="pink"></div>
+    <div class="gray"></div>
+    <div class="green"></div>
+    <div class="blue"></div>
+    <div class="light-purple"></div>
+    <div class="light-red"></div>
+    <div class="purple"></div>
+    </div>
+    <div class="Container1">
+        <div class="Nav">Nav</div>
+        <div class="side">Side</div>
+         <div class="side1">Side2</div>
+        <div class="content1">Content1</div>
+        <div class="content2">Conten2</div>
+        <div class="content3">Conten3</div>
+        <div class="tooten">tooten</div>
+    </div>
+</body>
+</html>

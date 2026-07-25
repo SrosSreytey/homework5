@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HorizonUI - Login</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<style>
+    * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+body {
+  background-color: #f0f1f3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+.login-wrapper {
+  display: flex;
+  width: 100%;
+  max-width: 1100px;
+  background-color: #f8f0f0;
+  border-radius: 20px;
+  border: 5px solid #0e0d0d;
+  overflow: hidden;
+  min-height: 650px;
+  box-shadow: 0px 10px 30px rgba(250, 246, 246, 0.2);
+}
+.login-left {
+  flex: 1;
+  padding: 40px 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-icon {
+  background-color: #4318FF;
+  color: #fff;
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+}
+
+.logo-text {
+  font-weight: 800;
+  font-size: 20px;
+  color: #1B2559;
+}
+.form-container {
+  max-width: 360px;
+  width: 100%;
+  margin: 20px auto;
+}
+
+.form-container h1 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #1B2559;
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  color: #A3AED0;
+  font-size: 14px;
+  margin-bottom: 24px;
+  line-height: 1.4;
+}
+.btn-google {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #E0E5F2;
+  border-radius: 12px;
+  background-color: #F4F7FE;
+  color: #2B3674;
+  font-weight: 600;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-google:hover {
+  background-color: #EAEFFC;
+}
+
+.google-icon {
+  width: 18px;
+  height: 18px;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 20px 0;
+}
+
+.divider::before,
+.divider::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid #E0E5F2;
+}
+
+.divider span {
+  padding: 0 10px;
+  color: #A3AED0;
+  font-size: 13px;
+}
+
+.form-group {
+  margin-bottom: 18px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: #2B3674;
+  margin-bottom: 8px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid #E0E5F2;
+  border-radius: 12px;
+  font-size: 14px;
+  outline: none;
+  color: #2B3674;
+  transition: border-color 0.2s;
+}
+
+.form-group input::placeholder {
+  color: #A3AED0;
+}
+
+.form-group input:focus {
+  border-color: #4318FF;
+}
+
+.input-password-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.password-toggle {
+  position: absolute;
+  right: 14px;
+  color: #A3AED0;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.form-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  font-size: 13px;
+}
+
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #2B3674;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.checkbox-container input {
+  accent-color: #4318FF;
+  width: 16px;
+  height: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.forgot-link {
+  color: #4318FF;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.forgot-link:hover {
+  text-decoration: underline;
+}
+
+.btn-submit {
+  width: 100%;
+  padding: 14px;
+  background-color: #5936FF;
+  color: #ffffff;
+  border: none;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0px 10px 20px rgba(67, 24, 255, 0.2);
+  transition: background-color 0.2s;
+}
+
+.btn-submit:hover {
+  background-color: #4318FF;
+}
+.register-text {
+  font-size: 13px;
+  color: #A3AED0;
+  margin-top: 20px;
+}
+
+.register-text a {
+  color: #4318FF;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.register-text a:hover {
+  text-decoration: underline;
+}
+
+.login-right {
+  flex: 1;
+  background: url('https://natureconservancy-h.assetsadobe.com/is/image/content/dam/tnc/nature/en/photos/y/i/YingHanAL.jpg?crop=0%2C25%2C4000%2C2200&wid=2600&hei=1430&scl=1.5384615384615385');
+  border-bottom-left-radius: px;
+  position: relative;
+}
+
+@media (max-width: 850px) {
+  .login-wrapper {
+    flex-direction: column;
+  }
+  .login-right {
+    display: none; 
+  }
+}
+</style>
+<body>
+
+  <div class="login-wrapper">
+    <div class="login-left">
+      <div class="logo">
+        <span class="logo-icon"><i class="fa-solid fa-mountain"></i></span>
+        <span class="logo-text">HorizonUI</span>
+      </div>
+      <div class="form-container">
+        <h1>Welcome back!</h1>
+        <p class="subtitle">Please enter your credentials to access your account</p>
+        <button class="btn-google">
+          <svg class="google-icon" viewBox="0 0 48 48">
+            <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/>
+            <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/>
+            <path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/>
+            <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/>
+          </svg>
+          Sign in with Google
+        </button>
+        <div class="divider">
+          <span>or</span>
+        </div>
+        <form action="#" method="POST">
+          <div class="form-group">
+            <label for="email">Email*</label>
+            <input type="email" id="email" placeholder="mail@simmmple.com" required>
+          </div>
+
+          <div class="form-group">
+            <label for="password">Password*</label>
+            <div class="input-password-wrapper">
+              <input type="password" id="password" placeholder="Min. 8 characters" required>
+              <i class="fa-regular fa-eye password-toggle"></i>
+            </div>
+          </div>
+          <div class="form-options">
+            <label class="checkbox-container">
+              <input type="checkbox" checked>
+              <span class="checkmark"></span>
+              Remember me
+            </label>
+            <a href="#" class="forgot-link">Forget password?</a>
+          </div>
+          <button type="submit" class="btn-submit">Sign In</button>
+        </form>
+        <p class="register-text">
+          Not registered yet? <a href="#">Create an Account</a>
+        </p>
+      </div>
+    </div>
+    <div class="login-right">
+      <div class="image-overlay"></div>
+    </div>
+  </div>
+
+</body>
+</html>

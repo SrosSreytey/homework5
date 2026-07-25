@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flexbox Layouts 2</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+     <style>
+        * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+.main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+
+.top-row {
+  display: flex;
+  gap: 50px;
+}
+
+.bottom-row {
+  display: flex;
+  justify-content: center;
+}
+.wrapper-box {
+  position: relative;
+  width: 250px;
+}
+.header-info {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  color: #777;
+  margin-bottom: 5px;
+  width: 200px;
+}
+
+.side-info {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%) rotate(90deg);
+  transform-origin: center;
+  font-size: 13px;
+  color: #777;
+  white-space: nowrap;
+}
+.wrapper {
+  width: 200px;
+  height: 200px;
+  background-color: #d9d9d9;
+  display: flex;
+  padding: 2px;
+}
+.blue-group {
+  background-color: #ff8c00;
+  padding: 3px;
+  display: flex;
+  gap: 3px;
+}
+
+.group-vertical {
+  flex-direction: column;
+  width: 60px;
+}
+
+.group-horizontal {
+  flex-direction: row;
+  height: 60px;
+  width: 100%;
+}
+
+.blue-item {
+  background-color: #235275;
+  flex: 1;
+}
+
+.spacer-orange {
+  background-color: #ff8c00;
+}
+.flex-layout-1 {
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 4px;
+}
+
+.orange-vertical {
+  flex: 1;
+  height: 100%;
+}
+.flex-layout-2 {
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 4px;
+}
+
+.orange-horizontal {
+  width: 100%;
+  flex: 1;
+}
+.flex-layout-3 {
+  flex-direction: row;
+  gap: 4px;
+}
+
+.left-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.orange-top-block {
+  background-color: #ff8c00;
+  height: 60px;
+  width: 100%;
+}
+
+.orange-bottom-split {
+  flex: 1;
+  display: flex;
+  gap: 4px;
+}
+
+.orange-sub-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.orange-sub-box {
+  background-color: #ff8c00;
+  flex: 1;
+}
+
+.orange-sub-right {
+  background-color: #ff8c00;
+  flex: 1;
+}
+
+.group-vertical-tall {
+  flex-direction: column;
+  width: 55px;
+  height: 100%;
+}
+
+.blue-item-tall {
+  background-color: #235275;
+  flex: 1;
+}
+     </style>
+<body>
+  <div class="main-container">
+    <div class="top-row">
+      <div class="wrapper-box">
+        <div class="header-info">
+          <span>wrapper</span>
+          <span>Width: 200px</span>
+        </div>
+        <div class="wrapper flex-layout-1">
+          <div class="spacer-orange orange-vertical"></div>
+          <div class="blue-group group-vertical">
+            <div class="blue-item"></div>
+            <div class="blue-item"></div>
+            <div class="blue-item"></div>
+          </div>
+          <div class="spacer-orange orange-vertical"></div>
+        </div>
+        <div class="side-info">Height: 200px</div>
+      </div>
+      <div class="wrapper-box">
+        <div class="header-info">
+          <span>wrapper</span>
+          <span>Width: 200px</span>
+        </div>
+        <div class="wrapper flex-layout-2">
+          <div class="spacer-orange orange-horizontal"></div>
+          <div class="blue-group group-horizontal">
+            <div class="blue-item"></div>
+            <div class="blue-item"></div>
+            <div class="blue-item"></div>
+          </div>
+          <div class="spacer-orange orange-horizontal"></div>
+        </div>
+        <div class="side-info">Height: 200px</div>
+      </div>
+
+    </div>
+    <div class="bottom-row">
+      <div class="wrapper-box">
+        <div class="header-info">
+          <span>wrapper</span>
+          <span>Width: 200px</span>
+        </div>
+        <div class="wrapper flex-layout-3">
+          <div class="left-section">
+            <div class="orange-top-block"></div>
+            <div class="orange-bottom-split">
+              <div class="orange-sub-left">
+                <div class="orange-sub-box"></div>
+                <div class="orange-sub-box"></div>
+              </div>
+              <div class="orange-sub-right"></div>
+            </div>
+          </div>
+          <div class="blue-group group-vertical-tall">
+            <div class="blue-item-tall"></div>
+            <div class="blue-item-tall"></div>
+          </div>
+
+        </div>
+        <div class="side-info">Height: 200px</div>
+      </div>
+
+    </div>
+
+  </div>
+
+</body>
+</html>

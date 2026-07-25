@@ -1,0 +1,199 @@
+.blockButtons {
+    height: auto;
+    width: 500px;
+    margin: auto;
+    border: 3px solid black;
+    padding: 10px;
+    box-shadow: 2px 2px 10px blueviolet;
+    margin-bottom: 20px;
+}
+
+.size {
+    width: 100%;
+    height: 30px;
+    margin-top: 10px;
+}
+
+.primary {
+    background-color: #1677ff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.primary i {
+    margin-right: 5px;
+}
+
+.primary:hover {
+    /* opacity: 80%; */
+    background-color: #498ef0;
+}
+
+.default {
+    border-radius: 5px;
+    border: 1px gray solid;
+    cursor: pointer;
+    background-color: white;
+}
+
+.default:hover {
+    border: 2px #498ef0 solid;
+    color: #498ef0;
+}
+
+.dashed {
+    border-radius: 5px;
+    border: 1px gray dashed;
+    cursor: pointer;
+    background-color: white;
+}
+
+.dashed:hover {
+    border: 1px #498ef0 dashed;
+    color: #498ef0;
+}
+
+.disabled {
+    border-radius: 5px;
+    border: 1px gray solid;
+    background-color: #f5f5f5;
+    opacity: 50%;
+}
+
+.disabled:hover {
+    cursor: not-allowed;
+}
+.text{
+    background-color: white;
+    border:1px #f5f5f5 solid;
+    opacity: 50px;
+    border-radius: 5px;
+}
+.text:hover{
+    border: 1px rgb(196, 193, 193) solid;
+    background-color: rgb(230, 227, 227);
+}
+.Link{
+    background-color: white;
+    border: 1px white ;
+    color: #085bd0;
+    cursor: pointer;
+
+}
+.Link:hover{
+    border: 1px white;
+    color: #8da9d1;
+}
+.Basic-Botton{
+    height: auto;
+    width: 200px;
+    margin: auto;
+    border: 3px solid black;
+    padding: 10px;
+    box-shadow: 2px 2px 10px blueviolet;
+
+}
+.row{
+    height: auto;
+    width: 200px;
+    margin: auto;
+    border: 3px solid black;
+    padding: 10px;
+    box-shadow: 2px 2px 10px blueviolet;
+    width: 500px;
+    margin-bottom: 20px;
+}
+.Primary-Button{
+    background-color: #1677ff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    gap: 20px;
+    height: 30px;
+}
+.Default-Button{
+    background-color: white;
+    border: 1px solid;
+    gap: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    height: 30px;
+
+}
+.Default-Button:hover{
+    border: #1677ff;
+    color: #498ef0;
+}
+.Dashed-Button{
+    background-color: white;
+    border: 1px dashed black;
+    border-radius: 5px;
+    cursor: pointer;
+    height: 30px;
+
+}
+.Dashed-Button:hover{
+    border: #498ef0;
+    color: #1677ff;
+}
+.Text-Button{
+    background-color: white;
+    border: 1px white solid;
+    border-radius: 5px;
+    cursor: pointer;
+    height: 30px;
+
+}
+.Text-Button:hover{
+    background-color: rgb(244, 238, 238);
+    border: 1px rgb(196, 193, 193);
+}
+.Link-Button{
+    border: 1px white;
+    color: #054eb3;
+    cursor: pointer;
+    border-radius: 5px;
+    height: 30px;
+    background-color: white;
+}
+.Link-Button:hover{
+    border: 1px white;
+    color: #8da9d1;
+}
+.Rounded-Buttons{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+
+}
+.primary-round{
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    background-color: #085bd0;
+    width: 100px;
+    height: 40px;
+
+}
+.primary-circle{
+    width: 50px;
+    height: 40px;
+    border-radius: 100%;
+    background-color: #1677ff;
+
+}
+.circle-default{
+    background-color: white;
+    width: 50px;
+    height: 40px;
+    border-radius: 100%;
+
+
+}
+.circle-deshed{
+ background-color: white;
+ width: 100px;
+ height: 50px;
+}

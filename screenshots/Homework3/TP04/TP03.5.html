@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TP03.2. Group Button</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background-color: #f7f7f7;
+  padding: 30px;
+  color: #333;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  background: white;
+  padding: 20px 40px;
+  border-top: 2px solid #1a365d;
+}
+
+h2 {
+  color: #1d4ed8;
+  font-size: 22px;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.subtitle {
+  color: #666;
+  margin-bottom: 30px;
+}
+
+.subtitle a {
+  color: #2563eb;
+  text-decoration: underline;
+}
+
+.row {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 30px;
+}
+.label {
+  width: 120px;
+  font-weight: bold;
+  color: #555;
+  padding-top: 10px;
+}
+.box {
+  border: 2px solid #000;
+  background: #fff;
+  padding: 15px;
+  box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.box-wide {
+  width: 500px;
+}
+
+.box-medium {
+  width: 300px;
+}
+
+.box-vertical {
+  width: 100px;
+}
+
+.btn-group-blue {
+  display: inline-flex;
+  background-color: #1d6bf3;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.btn-group-blue .btn {
+  background-color: transparent;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-group-blue .btn:hover {
+  background-color: #1557c0;
+}
+.btn-group-page {
+  display: inline-flex;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.btn-num {
+  background-color: #fff;
+  border: none;
+  border-right: 1px solid #ccc;
+  padding: 8px 14px;
+  font-size: 14px;
+  color: #666;
+  cursor: pointer;
+}
+
+.btn-num:last-child {
+  border-right: none;
+}
+
+.btn-num.active {
+  background-color: #6c757d;
+  color: white;
+}
+
+.btn-group-vertical {
+  display: flex;
+  flex-direction: column;
+  background-color: #1d6bf3;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.btn-v {
+  background-color: transparent;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 14px;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.2s;
+}
+
+.btn-v:hover {
+  background-color: #1557c0;
+}
+</style>
+<body>
+  <div class="container">
+    <div class="row">
+      <label class="label">Horizontal:</label>
+      <div class="box box-wide">
+        <div class="btn-group-blue">
+          <button class="btn">Left</button>
+          <button class="btn">Middle</button>
+          <button class="btn">Right</button>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="label"></div> 
+      <div class="box box-medium">
+        <div class="btn-group-page">
+          <button class="btn-num">1</button>
+          <button class="btn-num">2</button>
+          <button class="btn-num">3</button>
+          <button class="btn-num active">4</button>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <label class="label">Vertical:</label>
+      <div class="box box-vertical">
+        <div class="btn-group-vertical">
+          <button class="btn-v">Button</button>
+          <button class="btn-v">Button</button>
+          <button class="btn-v">Button</button>
+          <button class="btn-v">Button</button>
+          <button class="btn-v">Button</button>
+          <button class="btn-v">Button</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

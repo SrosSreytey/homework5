@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TP03.6. Input Fields</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<style>
+    * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+body {
+  background-color: #ffffff;
+  padding: 40px;
+  color: #333;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.row {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 30px;
+}
+
+.label {
+  width: 140px;
+  font-weight: 600;
+  color: #555;
+  font-size: 16px;
+  padding-top: 15px;
+}
+
+.box {
+  flex: 1;
+  border: 2px solid #000000;
+  background: #ffffff;
+  padding: 20px;
+  box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.input-icon {
+  position: absolute;
+  left: 12px;
+  color: #8c8c8c;
+  font-size: 14px;
+}
+
+.input-field {
+  width: 100%;
+  border: 1px solid #d9d9d9;
+  border-radius: 6px;
+  outline: none;
+  color: #333;
+  transition: all 0.3s;
+}
+
+.input-field::placeholder {
+  color: #bfbfbf;
+}
+
+.input-field:focus {
+  border-color: #40a9ff;
+  box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
+}
+
+.input-wrapper .input-field {
+  padding: 8px 12px;
+  font-size: 14px;
+}
+
+
+.input-large .input-field {
+  padding: 10px 12px 10px 34px;
+  font-size: 16px;
+}
+
+.input-default .input-field {
+  padding: 8px 12px 8px 34px;
+  font-size: 14px;
+}
+
+.input-small .input-field {
+  padding: 4px 10px 4px 30px;
+  font-size: 12px;
+}
+
+.input-small .input-icon {
+  left: 10px;
+  font-size: 12px;
+}
+
+.styled-row {
+  display: flex;
+  align-items: center;
+}
+
+.input-single {
+  width: 180px;
+  padding: 8px 12px;
+  border: 1px solid #d9d9d9;
+  border-radius: 6px;
+  outline: none;
+  font-size: 14px;
+  color: #555;
+}
+.input-group {
+  display: inline-flex;
+  align-items: center;
+}
+
+.addon-prefix {
+  background-color: #fafafa;
+  border: 1px solid #d9d9d9;
+  border-right: none;
+  border-radius: 6px 0 0 6px;
+  padding: 8px 12px;
+  font-size: 14px;
+  color: #555;
+}
+
+.input-grouped {
+  border: 1px solid #d9d9d9;
+  padding: 8px 12px;
+  font-size: 14px;
+  outline: none;
+  color: #555;
+  border-radius: 0 6px 6px 0;
+}
+
+.input-group .addon-prefix + .input-grouped {
+  border-radius: 0 6px 6px 0;
+}
+
+.input-group .addon-prefix + .input-grouped:not(:last-child) {
+  border-radius: 0;
+}
+
+.addon-suffix-btn {
+  background-color: #fafafa;
+  border: 1px solid #d9d9d9;
+  border-left: none;
+  border-radius: 0 6px 6px 0;
+  padding: 8px 12px;
+  cursor: pointer;
+  color: #8c8c8c;
+  font-size: 14px;
+}
+
+.addon-suffix-btn:hover {
+  color: #40a9ff;
+}
+
+.input-left-rounded {
+  border-radius: 6px 0 0 6px;
+  width: 350px;
+}
+
+.btn-submit {
+  background-color: #1677ff;
+  color: #ffffff;
+  border: none;
+  padding: 9px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 0 6px 6px 0;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-submit:hover {
+  background-color: #0958d9;
+}
+</style>
+<body>
+
+  <div class="container">
+    <div class="row">
+      <label class="label">Basic Input:</label>
+      <div class="box">
+        <div class="input-wrapper">
+          <input type="text" placeholder="Basic usage" class="input-field">
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <label class="label">Icon Input:</label>
+      <div class="box">
+        <div class="input-wrapper input-large">
+          <i class="fa-regular fa-user input-icon"></i>
+          <input type="text" placeholder="large size" class="input-field">
+        </div>
+        <div class="input-wrapper input-default">
+          <i class="fa-regular fa-user input-icon"></i>
+          <input type="text" placeholder="default size" class="input-field">
+        </div>
+        <div class="input-wrapper input-small">
+          <i class="fa-regular fa-user input-icon"></i>
+          <input type="text" placeholder="small size" class="input-field">
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <label class="label">Styled Input:</label>
+      <div class="box">
+        <div class="styled-row">
+          <input type="text" value="26888888" class="input-single">
+        </div>
+        <div class="styled-row">
+          <div class="input-group">
+            <span class="addon-prefix">0571</span>
+            <input type="text" value="26888888" class="input-grouped">
+          </div>
+        </div>
+        <div class="styled-row">
+          <div class="input-group">
+            <span class="addon-prefix">https://</span>
+            <input type="text" placeholder="input search text" class="input-grouped">
+            <button class="addon-suffix-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+          </div>
+        </div>
+        <div class="styled-row">
+          <div class="input-group">
+            <input type="text" value="Combine input and button" class="input-grouped input-left-rounded">
+            <button class="btn-submit">Submit</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>

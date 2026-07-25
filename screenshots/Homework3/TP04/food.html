@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Desserts & Cart Layout</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+​​​     <style>
+    * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #fcf8f6;
+  padding: 40px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+/* Container ធំ */
+.page-container {
+  max-width: 1200px;
+  width: 100%;
+}
+
+/* ចំណងជើង Desserts នៅខាងលើគេ */
+.title {
+  font-size: 2.2rem;
+  color: #260f08;
+  margin-bottom: 24px;
+  font-weight: 700;
+}
+
+/* Flexbox Alignment - តម្រឹមផ្នែកឆ្វេងនិងស្តាំឱ្យស្មើរគ្នានៅខាងលើ */
+.main-layout {
+  display: flex;
+  gap: 32px;
+  align-items: flex-start; /* ការពារកុំឱ្យប្រអប់ Cart ធ្លាក់ចុះក្រោម */
+}
+
+/* ផ្នែកខាងឆ្វេង Grid */
+.desserts-section {
+  flex: 1;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.image-wrapper {
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.image-wrapper img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  display: block;
+  border: 2px solid transparent;
+  transition: border-color 0.3s;
+}
+
+.image-wrapper.selected img {
+  border-color: #c73b0f;
+}
+
+.btn-cart {
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #ffffff;
+  border: 1px solid #ad8a85;
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: #260f08;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.btn-cart:hover {
+  border-color: #c73b0f;
+  color: #c73b0f;
+}
+
+.btn-quantity {
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #c73b0f;
+  border-radius: 25px;
+  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 140px;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.btn-quantity button {
+  background: transparent;
+  border: 1px solid #ffffff;
+  color: #ffffff;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 0.65rem;
+}
+
+.category {
+  font-size: 0.85rem;
+  color: #87635a;
+  margin-bottom: 4px;
+}
+
+.name {
+  font-size: 0.95rem;
+  color: #260f08;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.price {
+  font-size: 0.95rem;
+  color: #c73b0f;
+  font-weight: 600;
+}
+
+/* ផ្នែកខាងស្តាំ Cart */
+.cart-section {
+  width: 350px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+}
+
+.cart-section h2 {
+  color: #c73b0f;
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 0;
+  border-bottom: 1px solid #f2ebe9;
+}
+
+.cart-item-details h4 {
+  font-size: 0.9rem;
+  color: #260f08;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.cart-item-price {
+  display: flex;
+  gap: 12px;
+  font-size: 0.85rem;
+}
+
+.cart-item-price .quantity {
+  color: #c73b0f;
+  font-weight: 700;
+}
+
+.cart-item-price .unit-price {
+  color: #87635a;
+}
+
+.cart-item-price .total-item-price {
+  color: #87635a;
+  font-weight: 600;
+}
+
+.remove-btn {
+  background: none;
+  border: none;
+  color: #ad8a85;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+.order-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 24px;
+  margin-bottom: 20px;
+}
+
+.total-amount {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #260f08;
+}
+
+.carbon-neutral {
+  background-color: #fcf8f6;
+  border-radius: 8px;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 0.8rem;
+  color: #260f08;
+  margin-bottom: 24px;
+}
+
+.carbon-neutral i {
+  color: #1ea575;
+}
+
+.btn-confirm {
+  width: 100%;
+  background-color: #c73b0f;
+  color: #ffffff;
+  border: none;
+  padding: 14px;
+  border-radius: 25px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .main-layout {
+    flex-direction: column;
+  }
+  .cart-section {
+    width: 100%;
+  }
+}
+
+@media (max-width: 650px) {
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+<body>
+
+  <!-- Container ធំរុំព័ទ្ធទាំងអស់ -->
+  <div class="page-container">
+    
+    <!-- ដាក់ Title នៅលើគេបង្អស់ -->
+    <h1 class="title">Desserts</h1>
+
+    <!-- Layout ចែកជា ២ (ឆ្វេង និង ស្តាំ) -->
+    <div class="main-layout">
+      
+      <!-- ផ្នែកខាងឆ្វេង៖ Desserts Grid (3x3) -->
+      <section class="desserts-section">
+        <div class="product-grid">
+          <!-- Item 1 -->
+          <div class="product-card">
+            <div class="image-wrapper">
+              <img src="https://images.unsplash.com/photo-1562376552-0d160a2f238d?w=500" alt="Waffle">
+              <button class="btn-cart"><i class="fa-solid fa-cart-plus"></i> Add to Cart</button>
+            </div>
+            <p class="category">Waffle</p>
+            <h3 class="name">Waffle with Berries</h3>
+            <p class="price">$6.50</p>
+          </div>
+
+          <!-- Item 2 -->
+          <div class="product-card">
+            <div class="image-wrapper selected">
+              <img src="https://images.unsplash.com/photo-1470124182917-cc6e71b22ecc?w=500" alt="Crème Brûlée">
+              <div class="btn-quantity">
+                <button><i class="fa-solid fa-minus"></i></button>
+                <span>4</span>
+                <button><i class="fa-solid fa-plus"></i></button>
+              </div>
+            </div>
+            <p class="category">Crème Brûlée</p>
+            <h3 class="name">Vanilla Bean Crème Brûlée</h3>
+            <p class="price">$7.00</p>
+          </div>
+
+          <!-- Item 3 -->
+          <div class="product-card">
+            <div class="image-wrapper">
+              <img src="https://images.unsplash.com/photo-1569864358642-9d1684040f43?w=500" alt="Macaron">
+              <button class="btn-cart"><i class="fa-solid fa-cart-plus"></i> Add to Cart</button>
+            </div>
+            <p class="category">Macaron</p>
+            <h3 class="name">Macaron Mix of Five</h3>
+            <p class="price">$8.00</p>
+          </div>
+
+          <!-- Item 4 -->
+          <div class="product-card">
+            <div class="image-wrapper selected">
+              <img src="https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?w=500" alt="Tiramisu">
+              <div class="btn-quantity">
+                <button><i class="fa-solid fa-minus"></i></button>
+                <span>1</span>
+                <button><i class="fa-solid fa-plus"></i></button>
+              </div>
+            </div>
+            <p class="category">Tiramisu</p>
+            <h3 class="name">Classic Tiramisu</h3>
+            <p class="price">$5.50</p>
+          </div>
+
+          <!-- Item 5 -->
+          <div class="product-card">
+            <div class="image-wrapper">
+              <img src="https://images.unsplash.com/photo-1621236378699-8597faf6a176?w=500" alt="Baklava">
+              <button class="btn-cart"><i class="fa-solid fa-cart-plus"></i> Add to Cart</button>
+            </div>
+            <p class="category">Baklava</p>
+            <h3 class="name">Pistachio Baklava</h3>
+            <p class="price">$4.00</p>
+          </div>
+
+          <!-- Item 6 -->
+          <div class="product-card">
+            <div class="image-wrapper">
+              <img src="https://images.unsplash.com/photo-1519869325930-281384150729?w=500" alt="Pie">
+              <button class="btn-cart"><i class="fa-solid fa-cart-plus"></i> Add to Cart</button>
+            </div>
+            <p class="category">Pie</p>
+            <h3 class="name">Lemon Meringue Pie</h3>
+            <p class="price">$5.00</p>
+          </div>
+
+          <!-- Item 7 -->
+          <div class="product-card">
+            <div class="image-wrapper">
+              <img src="https://images.unsplash.com/photo-1586985289688-ca3cf47d3e6e?w=500" alt="Cake">
+              <button class="btn-cart"><i class="fa-solid fa-cart-plus"></i> Add to Cart</button>
+            </div>
+            <p class="category">Cake</p>
+            <h3 class="name">Red Velvet Cake</h3>
+            <p class="price">$4.50</p>
+          </div>
+
+          <!-- Item 8 -->
+          <div class="product-card">
+            <div class="image-wrapper">
+              <img src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=500" alt="Brownie">
+              <button class="btn-cart"><i class="fa-solid fa-cart-plus"></i> Add to Cart</button>
+            </div>
+            <p class="category">Brownie</p>
+            <h3 class="name">Salted Caramel Brownie</h3>
+            <p class="price">$4.50</p>
+          </div>
+
+          <!-- Item 9 -->
+          <div class="product-card">
+            <div class="image-wrapper selected">
+              <img src="https://images.unsplash.com/photo-1488477181946-6428a0291777?w=500" alt="Panna Cotta">
+              <div class="btn-quantity">
+                <button><i class="fa-solid fa-minus"></i></button>
+                <span>2</span>
+                <button><i class="fa-solid fa-plus"></i></button>
+              </div>
+            </div>
+            <p class="category">Panna Cotta</p>
+            <h3 class="name">Vanilla Panna Cotta</h3>
+            <p class="price">$6.50</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ផ្នែកខាងស្តាំ៖ Your Cart -->
+      <aside class="cart-section">
+        <h2>Your Cart (<span id="cart-count">7</span>)</h2>
+
+        <div class="cart-items">
+          <!-- Cart Item 1 -->
+          <div class="cart-item">
+            <div class="cart-item-details">
+              <h4>Classic Tiramisu</h4>
+              <div class="cart-item-price">
+                <span class="quantity">1x</span>
+                <span class="unit-price">@ $5.50</span>
+                <span class="total-item-price">$5.50</span>
+              </div>
+            </div>
+            <button class="remove-btn"><i class="fa-regular fa-circle-xmark"></i></button>
+          </div>
+
+          <!-- Cart Item 2 -->
+          <div class="cart-item">
+            <div class="cart-item-details">
+              <h4>Vanilla Bean Crème Brûlée</h4>
+              <div class="cart-item-price">
+                <span class="quantity">4x</span>
+                <span class="unit-price">@ $7.00</span>
+                <span class="total-item-price">$28.00</span>
+              </div>
+            </div>
+            <button class="remove-btn"><i class="fa-regular fa-circle-xmark"></i></button>
+          </div>
+
+          <!-- Cart Item 3 -->
+          <div class="cart-item">
+            <div class="cart-item-details">
+              <h4>Vanilla Panna Cotta</h4>
+              <div class="cart-item-price">
+                <span class="quantity">2x</span>
+                <span class="unit-price">@ $6.50</span>
+                <span class="total-item-price">$13.00</span>
+              </div>
+            </div>
+            <button class="remove-btn"><i class="fa-regular fa-circle-xmark"></i></button>
+          </div>
+        </div>
+
+        <!-- Total Price -->
+        <div class="order-total">
+          <span>Order Total</span>
+          <span class="total-amount">$46.50</span>
+        </div>
+
+        <!-- Carbon Neutral Banner -->
+        <div class="carbon-neutral">
+          <i class="fa-solid fa-tree"></i>
+          <p>This is a <strong>carbon-neutral</strong> delivery</p>
+        </div>
+
+        <!-- Confirm Order Button -->
+        <button class="btn-confirm">Confirm Order</button>
+      </aside>
+
+    </div>
+  </div>
+
+</body>
+</html>

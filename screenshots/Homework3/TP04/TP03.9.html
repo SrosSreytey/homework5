@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flexbox Layouts 4 Boxes</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+    <style>
+        * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px 60px;
+  background: white;
+  padding: 20px;
+}
+.wrapper-box {
+  position: relative;
+  width: 250px;
+}
+.header-info {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  color: #777;
+  margin-bottom: 5px;
+  width: 200px;
+}
+
+.side-info {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%) rotate(90deg);
+  transform-origin: center;
+  font-size: 13px;
+  color: #777;
+  white-space: nowrap;
+}
+.wrapper {
+  width: 200px;
+  height: 200px;
+  background-color: #d9d9d9;
+  display: flex;
+}
+.items-group {
+  background-color: #ff8c00;
+  padding: 3px;
+  display: flex;
+  gap: 3px;
+}
+
+.row-group {
+  flex-direction: row;
+}
+
+.col-group {
+  flex-direction: column;
+}
+.item {
+  width: 42px;
+  height: 42px;
+  background-color: #235275;
+}
+.flex-center-all {
+  justify-content: center;
+  align-items: center;
+}
+.flex-bottom-center {
+  justify-content: center;
+  align-items: flex-end;
+}
+.flex-right {
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+    </style>
+<body>
+  <div class="grid-container">
+      <div class="header-info">
+      </div>
+      <div class="wrapper flex-center-all">
+        <div class="items-group row-group">
+          <div class="item"></div>
+          <div class="item"></div>
+          <div class="item"></div>
+        </div>
+      </div>
+      <div class="side-info">Height: 200px</div>
+    </div>
+    <div class="wrapper-box">
+      <div class="header-info">
+        <span>wrapper</span>
+        <span>Width: 200px</span>
+      </div>
+      <div class="wrapper flex-center-all">
+        <div class="items-group col-group">
+          <div class="item"></div>
+          <div class="item"></div>
+          <div class="item"></div>
+        </div>
+      </div>
+      <div class="side-info">Height: 200px</div>
+    </div>
+    <div class="wrapper-box">
+      <div class="header-info">
+        <span>wrapper</span>
+        <span>Width: 200px</span>
+      </div>
+      <div class="wrapper flex-bottom-center">
+        <div class="items-group row-group">
+          <div class="item"></div>
+          <div class="item"></div>
+          <div class="item"></div>
+        </div>
+      </div>
+      <div class="side-info">Height: 200px</div>
+    </div>
+    <div class="wrapper-box">
+      <div class="header-info">
+        <span>wrapper</span>
+        <span>Width: 200px</span>
+      </div>
+      <div class="wrapper flex-right">
+        <div class="items-group col-group">
+          <div class="item"></div>
+          <div class="item"></div>
+          <div class="item"></div>
+        </div>
+      </div>
+      <div class="side-info">Height: 200px</div>
+    </div>
+
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        width: 500px;
+        height: 500px;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+        display: flex;
+        align-items: center;
+        border: 4px black solid;
+    }
+    .parent{
+       background-color: rgb(176, 170, 170); 
+       width: 200px;
+       height: 200px;
+       padding: 5px;
+       position: relative;
+    }
+    .child{
+        width: 200px;
+        height: 50px;
+        justify-content: center;
+        align-items: center;
+        background-color: rgb(209, 141, 5);
+        color: white;
+        display: flex;
+        position: relative;
+        position: absolute;
+    }
+    .child1{
+        left: 5px;
+        top: 5px;
+        width: 30%;
+        height: 95%;
+    }
+    .child2{
+        left: 5px;
+        width: 30%;
+        height: 95%;
+    }
+    .child3{
+        left: 50%;
+        top: 50%;
+        width: 95%;
+        height: 30%;
+        translate: -50% -50%;
+    }
+    .child4{
+        right: 5px;
+        width: 30%;
+        height: 95%;
+    }
+</style>
+<body>
+    <div class="parent parent-1">
+        <div class="child child1">child</div>
+    </div>
+    <div class="parent pqrent-2">
+        <div class="child child2">child</div>
+    </div>
+    <div class="parent parent-3">
+        <div class="child child3">child</div>
+    </div>
+    <div class="parent parent-4">
+        <div class="child child4">child</div>
+    </div>
+</body>
+</html>

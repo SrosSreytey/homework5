@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .container{
+        display: grid;
+        font-size: 60px;
+        grid-template-columns: 100px 200px;
+        grid-template-rows: 100px 200px;
+        grid-template-areas: 
+        'Nav Nav '
+        'side1 side2'
+        'side1 side2';
+        gap: 10px;
+        
+    }
+    @media only screen and (max-width:500px){
+        .container{
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 100px 50px 400px;
+            grid-template-areas: 
+            'Nav  '
+            'side1 '
+            'side2';
+        }
+
+    }
+    .Nav{
+        background-color: brown;
+        grid-area: Nav;
+    }
+    .side1{
+        background-color: blue;
+        grid-area: side1;
+    }
+    .side2{
+        background-color: blueviolet;
+        grid-area: side2;
+    }
+</style>
+<body>
+    <div class="container">
+        <div class="Nav"></div>
+        <div class="side1"></div>
+        <div class="side2"></div>
+    </div>
+</body>
+</html>
